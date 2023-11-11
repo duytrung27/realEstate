@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .register-button {
+    @apply text-white bg-black text-base px-4 py-2 rounded-full hover:scale-105 transition ease-out duration-300;
+  }
+  .nav-items {
+    @apply md:mr-[71px] text-lg cursor-pointer hover:opacity-50;
+  }
+  .nav-active {
+    @apply font-bold hover:opacity-100;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
