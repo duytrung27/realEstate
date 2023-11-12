@@ -13,8 +13,15 @@ const config = withMT({
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        spaceGrotesk: ["Space Grotesk", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        synonym: ["Synonym"],
+        amulya: ["Amulya"],
+      },
       screens: {
-        md: "713px",
+        md: "712px",
+        xl: "1280px",
         "2xl": "1440px",
       },
       colors: {

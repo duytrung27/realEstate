@@ -7,6 +7,7 @@ import MainBackgroundPart from "./components/MainBackgroundPart";
 import Nav from "./components/Nav";
 import RealAppraisalServicesPart from "./components/RealAppraisalServicesPart";
 import RentalPart from "./components/RentalPart";
+import RevealOnScroll from "./components/RevealOnScroll";
 import ServiceSlidePart from "./components/ServiceSlidePart";
 import SolutionPart from "./components/SolutionPart";
 
@@ -15,12 +16,24 @@ export default function Home() {
     <main>
       <Nav />
       <MainBackgroundPart />
-      <ServiceSlidePart />
-      <SolutionPart />
-      <RentalPart />
-      <RealAppraisalServicesPart />
-      <DreamHomePart />
-      <CustomerComment />
+      <RevealOnScroll>
+        <ServiceSlidePart />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <SolutionPart />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <RentalPart />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <RealAppraisalServicesPart />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <DreamHomePart />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <CustomerComment />
+      </RevealOnScroll>
       <Footer />
     </main>
   );

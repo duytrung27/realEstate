@@ -24,7 +24,7 @@ const RevealOnScroll = ({ children, ...props }: Props) => {
     };
   }, []);
 
-  const classes = `transition-opacity duration-1000  
+  const classes = `transition-opacity duration-[2000ms]  
         ${isVisible ? "opacity-100" : "opacity-0"}`;
 
   return (

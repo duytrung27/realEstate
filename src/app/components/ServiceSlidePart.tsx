@@ -28,7 +28,7 @@ function ServiceSlidePart() {
     <div className="relative border-t-2 border-b-[1px] border-gray-400 py-6 overflow-hidden">
       <div className="flex animate-marquee whitespace-nowrap">
         {items.map((item, idx) => (
-          <div className="flex mx-4 items-center" key={idx}>
+          <div className="flex font-inter mx-4 items-center" key={idx}>
             <img
               className="w-7 h-7 mx-4 object-contain"
               alt="img"

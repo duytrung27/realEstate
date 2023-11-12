@@ -2,15 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Synonym";
+  src: url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.eot");
+  src: url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.svg#Synonym-Regular")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZFhiI2B.woff2)
+    format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Amulya";
+  src: url("//cdn.fontshare.com/wf/GSJK57T6I7HPQWCUX7MLHBCISZLIZ4OR/DOZUNEZNWPZUV5T5LOL43ADB6CNYXNF5/QJ55ZH5AEGHTMOY3L34XTW5QXWYNA45R.woff2")
+      format("woff2"),
+    url("//cdn.fontshare.com/wf/GSJK57T6I7HPQWCUX7MLHBCISZLIZ4OR/DOZUNEZNWPZUV5T5LOL43ADB6CNYXNF5/QJ55ZH5AEGHTMOY3L34XTW5QXWYNA45R.woff")
+      format("woff"),
+    url("//cdn.fontshare.com/wf/GSJK57T6I7HPQWCUX7MLHBCISZLIZ4OR/DOZUNEZNWPZUV5T5LOL43ADB6CNYXNF5/QJ55ZH5AEGHTMOY3L34XTW5QXWYNA45R.ttf")
+      format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 @layer base {
   body {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden font-spaceGrotesk;
   }
 }
 
 @layer components {
   .register-button {
-    @apply text-white bg-black text-base px-4 py-2 rounded-full hover:scale-105 transition ease-out duration-300;
+    @apply text-white font-synonym bg-black text-[11px] md:text-base px-4 py-2 rounded-full hover:scale-105 transition ease-out duration-300;
   }
   .nav-items {
     @apply md:mr-[71px] text-lg cursor-pointer hover:opacity-50;

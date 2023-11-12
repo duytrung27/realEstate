@@ -41,31 +41,31 @@ function RentalPart() {
     <div className="bg-background">
       <div className="lg:max-w-7xl m-auto w-full text-center align-middle pt-32 pb-32">
         <div className="flex items-center justify-center uppercase font-bold">
-          <FiArrowDownRight className="text-primary mr-1 text-[25px]" />
+          <FiArrowDownRight className="text-primary mr-1 text-[20px] md:text-[25px]" />
           <h1 className="text-[19px]">Dreamer Home</h1>
         </div>
-        <div className="text-7xl capitalize mt-6 mb-20">
+        <div className="text-[40px] md:text-[60px] xl:text-7xl capitalize mt-6 mb-20">
           <h1>If you're in need of</h1>
           <h1>
             <span className="text-primary"> rental </span>services
           </h1>
         </div>
-        <ScrollContainer className="flex w-full text-left gap-9 overflow-x-scroll no-scrollbar">
+        <ScrollContainer className="pl-10 flex w-full text-left gap-2 md:gap-9 overflow-x-scroll no-scrollbar">
           {items.map((item, idx) => (
-            <div key={idx} className="w-[356px] cursor-pointer">
+            <div key={idx} className="md:w-[356px] cursor-pointer">
               <img
                 src={item.image}
                 alt="img"
-                className="h-[449px] w-[356px] object-cover rounded-[10px]"
+                className="h-[400px] w-[307px] md:h-[449px] md:w-[356px] object-cover rounded-[10px]"
               />
-              <h2 className="text-3xl font-medium font-['Inter'] mt-[30px] w-[356px]">
+              <h2 className="text-3xl font-medium font-inter mt-[30px] w-[356px]">
                 {item.title}
               </h2>
-              <p className="text-lg text-noraml leading-7 font-['Synonym'] mt-[11px] mb-[18px] w-[356px]">
+              <p className="text-lg text-noraml leading-7 font-synonym mt-[11px] mb-[18px] w-[356px]">
                 {item.des}
               </p>
               <div className="flex items-center cursor-pointer">
-                <h1 className="uppercase text-black text-[19.16px] font-bold font-['Space Grotesk'] leading-[21.07px]">
+                <h1 className="uppercase text-[19.16px] font-bold leading-[21.07px]">
                   Book now
                 </h1>
                 <BsArrowRightShort className="text-primary mr-1 text-[30px]" />
