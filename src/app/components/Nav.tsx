@@ -25,7 +25,7 @@ function Nav() {
   const [activeNav, setActiveNav] = useState(1);
 
   return (
-    <div className="md:flex justify-between font-synonym lg:max-w-[63.625rem] md:h-[43px] m-auto my-[40px] items-center">
+    <div className=" bg-white md:flex justify-between font-synonym lg:max-w-[63.625rem] md:h-[43px] m-auto py-[40px] items-center">
       <ul className="flex justify-around">
         {items.map((item, i) => (
           <li

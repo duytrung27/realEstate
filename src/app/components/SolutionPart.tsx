@@ -3,7 +3,7 @@ import { FiArrowDownRight } from "react-icons/fi";
 
 function SolutionPart() {
   return (
-    <div className="lg:grid lg:grid-cols-2 lg:max-w-7xl m-auto mt-40 mb-20 gap-10 px-10 xl:px-0">
+    <div className="lg:grid lg:grid-cols-2 lg:max-w-7xl m-auto mt-20 xl:mt-28 mb-20 gap-10 px-10 xl:px-0">
       <div className="m-auto lg:col-span-1">
         <div className="flex items-center justify-center md:justify-start uppercase font-bold">
           <FiArrowDownRight className="text-primary mr-1 text-[20px] md:text-[25px]" />

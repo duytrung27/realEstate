@@ -2,6 +2,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { BsFacebook, BsYoutube } from "react-icons/bs";
 
 function Footer() {
+
   return (
     <div className="bg-black overflow-x-hidden font-synonym">
       <div className="px-10 xl:px-0 xl:max-w-7xl m-auto">

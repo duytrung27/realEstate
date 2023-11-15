@@ -11,6 +11,8 @@ import RevealOnScroll from "./components/RevealOnScroll";
 import ServiceSlidePart from "./components/ServiceSlidePart";
 import SolutionPart from "./components/SolutionPart";
 
+import "swiper/css";
+
 export default function Home() {
   return (
     <main>
