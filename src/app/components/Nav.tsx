@@ -78,7 +78,10 @@ function Nav() {
                 className={`p-5 ${
                   activeNav === item.active ? "nav-active" : ""
                 }`}
-                onClick={() => setActiveNav(item.active)}
+                onClick={() => {
+                  setOpenMenu(false);
+                  setActiveNav(item.active);
+                }}
               >
                 {item.label}
               </li>

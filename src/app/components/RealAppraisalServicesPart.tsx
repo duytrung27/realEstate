@@ -3,7 +3,7 @@ import { FiArrowDownRight } from "react-icons/fi";
 
 function RealAppraisalServicesPart() {
   return (
-    <div className="grid grid-rows-2 lg:grid-rows-none lg:grid-cols-2 max-w-7xl m-auto px-10 xl:px-0 pb-16 mt-20 gap-0 xl:gap-20 border-b-[1px] border-gray-400">
+    <div className="grid grid-rows-2 lg:grid-rows-none lg:grid-cols-2 max-w-7xl m-auto px-10 xl:px-0 pb-0 lg:pb-16 mt-20 gap-0 xl:gap-20 border-b-[1px] border-gray-400">
       <div className="grid grid-cols-3 gap-3 lg:order-first order-last">
         <div className="relative col-span-2 h-[383px]">
           <div className="absolute bottom-[-30px] left-[-27px] w-[170px] h-[118px] bg-primary" />
