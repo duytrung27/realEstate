@@ -1,5 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoMdCloseCircle } from "react-icons/io";
+import { useWindowScroll } from "react-use";
 
 const items = [
   {
@@ -23,10 +25,24 @@ const items = [
 
 function Nav() {
   const [activeNav, setActiveNav] = useState(1);
+  const [openMenu, setOpenMenu] = useState(false);
+  const { y: pageYOffset } = useWindowScroll();
+
+  const [addedClass, setAddedClass] = useState("");
+
+  useEffect(() => {
+    if (pageYOffset > 50) {
+      setAddedClass("shadow-md rounded-[10px]");
+    } else {
+      setAddedClass("");
+    }
+  }, [pageYOffset]);
 
   return (
-    <div className=" bg-white md:flex justify-between font-synonym lg:max-w-[63.625rem] md:h-[43px] m-auto py-[40px] items-center">
-      <ul className="flex justify-around">
+    <div
+      className={`bg-white flex mb-10 sticky z-50 top-0 justify-between font-synonym lg:max-w-[63.625rem] md:h-[43px] m-auto p-3 md:py-[40px] items-center ${addedClass}`}
+    >
+      <ul className="md:flex hidden justify-around">
         {items.map((item, i) => (
           <li
             key={i}
@@ -39,12 +55,42 @@ function Nav() {
           </li>
         ))}
       </ul>
-      <ul className="flex items-center justify-center m-10">
+      <ul className="flex items-center justify-start">
         <li className="mr-3 text-base cursor-pointer hover:opacity-50">
           Sign in
         </li>
         <button className="register-button">Get Started Free</button>
       </ul>
+      <RxHamburgerMenu
+        className="md:hidden"
+        size={30}
+        onClick={() => setOpenMenu(true)}
+      />
+      {/* Burger menu for mobile */}
+      {openMenu && (
+        <div className="relative md:hidden">
+          <ul
+            className={`p-10 flex flex-col divide-y rounded-[10px] bg-white shadow-md fixed top-0 right-0 w-3/4 h-[100vh]`}
+          >
+            {items.map((item, i) => (
+              <li
+                key={i}
+                className={`p-5 ${
+                  activeNav === item.active ? "nav-active" : ""
+                }`}
+                onClick={() => setActiveNav(item.active)}
+              >
+                {item.label}
+              </li>
+            ))}
+          </ul>
+          <IoMdCloseCircle
+            size={30}
+            className="absolute top-0 right-0"
+            onClick={() => setOpenMenu(false)}
+          />
+        </div>
+      )}
     </div>
   );
 }

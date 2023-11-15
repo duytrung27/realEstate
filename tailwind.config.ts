@@ -18,7 +18,6 @@ const config = {
         amulya: ["Amulya"],
       },
       screens: {
-        md: "712px",
         xl: "1280px",
         "2xl": "1440px",
       },

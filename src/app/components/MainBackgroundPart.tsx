@@ -12,7 +12,7 @@ function MainBackgroundPart() {
   }, []);
 
   return (
-    <div className="relative h-[894px] w-full">
+    <div className="relative h-[894px] w-full z-10">
       <img
         src="/images/main_bg.jpg"
         alt="main_bg"
