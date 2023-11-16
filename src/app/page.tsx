@@ -1,41 +1,29 @@
 "use client";
 
 import CustomerComment from "./components/CustomerComment";
-import DreamHomePart from "./components/DreamHomePart";
+import OurBestHome from "./components/OurBestHome";
 import Footer from "./components/Footer";
-import MainBackgroundPart from "./components/MainBackgroundPart";
+import Header from "./components/Header";
 import Nav from "./components/Nav";
-import RealAppraisalServicesPart from "./components/RealAppraisalServicesPart";
-import RentalPart from "./components/RentalPart";
-import RevealOnScroll from "./components/RevealOnScroll";
-import ServiceSlidePart from "./components/ServiceSlidePart";
-import SolutionPart from "./components/SolutionPart";
+import OurValue from "./components/OurValue";
+import DreamerHome from "./components/DreamerHome";
+import ServiceSlide from "./components/ServiceSlide";
+import Solution from "./components/Solution";
 
+import "animate.css";
 import "swiper/css";
 
 export default function Home() {
   return (
     <main>
       <Nav />
-      <MainBackgroundPart />
-      <RevealOnScroll>
-        <ServiceSlidePart />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <SolutionPart />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <RentalPart />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <RealAppraisalServicesPart />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <DreamHomePart />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <CustomerComment />
-      </RevealOnScroll>
+      <Header />
+      <ServiceSlide />
+      <Solution />
+      <DreamerHome />
+      <OurValue />
+      <OurBestHome />
+      <CustomerComment />
       <Footer />
     </main>
   );

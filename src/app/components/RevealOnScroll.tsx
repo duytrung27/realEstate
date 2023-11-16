@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState, ReactNode } from "react";
 
 interface Props {
   children?: ReactNode;
+  animate: String;
 }
 
-const RevealOnScroll = ({ children, ...props }: Props) => {
+const RevealOnScroll = ({ children, animate, ...props }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -24,8 +25,7 @@ const RevealOnScroll = ({ children, ...props }: Props) => {
     };
   }, []);
 
-  const classes = `transition-opacity duration-[2000ms]  
-        ${isVisible ? "opacity-100" : "opacity-0"}`;
+  const classes = `${isVisible ? `animate__animated ${animate}` : ""}`;
 
   return (
     <div ref={ref} className={classes}>

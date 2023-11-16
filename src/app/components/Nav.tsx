@@ -61,21 +61,28 @@ function Nav() {
         </li>
         <button className="register-button">Get Started Free</button>
       </ul>
-      <RxHamburgerMenu
-        className="md:hidden"
-        size={30}
-        onClick={() => setOpenMenu(true)}
-      />
+      {!openMenu && (
+        <RxHamburgerMenu
+          className="md:hidden"
+          size={30}
+          onClick={() => setOpenMenu(true)}
+        />
+      )}
       {/* Burger menu for mobile */}
       {openMenu && (
         <div className="relative md:hidden">
           <ul
-            className={`p-10 flex flex-col divide-y rounded-[10px] bg-white shadow-md fixed top-0 right-0 w-3/4 h-[100vh]`}
+            className={`p-10 animate__animated animate__fadeInRight flex flex-col rounded-[10px] bg-white shadow-md fixed top-0 right-0 w-3/4 h-[100vh]`}
           >
+            <IoMdCloseCircle
+              className="absolute top-0 right-0 mr-5 mt-5"
+              size={30}
+              onClick={() => setOpenMenu(false)}
+            />
             {items.map((item, i) => (
               <li
                 key={i}
-                className={`p-5 ${
+                className={`p-5 border-b-[1px] border-gray-200 ${
                   activeNav === item.active ? "nav-active" : ""
                 }`}
                 onClick={() => {
@@ -87,11 +94,6 @@ function Nav() {
               </li>
             ))}
           </ul>
-          <IoMdCloseCircle
-            size={30}
-            className="absolute top-0 right-0"
-            onClick={() => setOpenMenu(false)}
-          />
         </div>
       )}
     </div>

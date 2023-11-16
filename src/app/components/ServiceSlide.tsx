@@ -1,6 +1,6 @@
 import React from "react";
 
-function ServiceSlidePart() {
+function ServiceSlide() {
   const items = [
     {
       label: "Outdoor Activities",
@@ -42,4 +42,4 @@ function ServiceSlidePart() {
   );
 }
 
-export default ServiceSlidePart;
+export default ServiceSlide;

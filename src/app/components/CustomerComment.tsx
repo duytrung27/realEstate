@@ -4,6 +4,7 @@ import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { MdVerified } from "react-icons/md";
 import Slidewiper from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import RevealOnScroll from "./RevealOnScroll";
 
 const items = [
   {
@@ -64,135 +65,141 @@ function CustomerComment() {
     <div className="pl-10 xl:pl-0 bg-background pt-[69px] pb-[77px]">
       <div className="xl:grid xl:grid-cols-5 xl:max-w-7xl m-auto gap-5">
         <div className="xl:col-span-2">
-          <div className="text-[45px] md:text-[60px] xl:text-[69.42px] font-normal font-['Space Grotesk'] capitalize leading-[77.07px]">
-            <h1>
-              Our<span className="font-bold"> customers </span>
-            </h1>
-            <span>
-              think we’re <br />
-              the best
-            </span>
-          </div>
-          <div className="xl:flex hidden justify-center xl:justify-start mt-12">
-            <div
-              onClick={handlePrev}
-              className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
-                isBegining ? "bg-[#E7DFFA]" : "bg-primary"
-              }`}
-            >
-              <BsArrowLeftShort
-                className={`text-[38px]  ${
-                  isBegining ? "text-primary" : "text-white"
-                }`}
-              />
+          <RevealOnScroll animate="animate__headShake">
+            <div className="text-[45px] md:text-[60px] xl:text-[69.42px] font-normal font-['Space Grotesk'] capitalize leading-[77.07px]">
+              <h1>
+                Our<span className="font-bold"> customers </span>
+              </h1>
+              <span>
+                think we’re <br />
+                the best
+              </span>
             </div>
-            <div
-              onClick={handleNext}
-              className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
-                isEnd ? "bg-[#E7DFFA]" : "bg-primary"
-              }`}
-            >
-              <BsArrowRightShort
-                className={`text-[38px]  ${
-                  isEnd ? "text-primary" : "text-white"
+            <div className="xl:flex hidden justify-center xl:justify-start mt-12">
+              <div
+                onClick={handlePrev}
+                className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
+                  isBegining ? "bg-[#E7DFFA]" : "bg-primary"
                 }`}
-              />
+              >
+                <BsArrowLeftShort
+                  className={`text-[38px]  ${
+                    isBegining ? "text-primary" : "text-white"
+                  }`}
+                />
+              </div>
+              <div
+                onClick={handleNext}
+                className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
+                  isEnd ? "bg-[#E7DFFA]" : "bg-primary"
+                }`}
+              >
+                <BsArrowRightShort
+                  className={`text-[38px]  ${
+                    isEnd ? "text-primary" : "text-white"
+                  }`}
+                />
+              </div>
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
         <div className="pr-10 pt-10 xl:pt-0 xl:pr-0 text-left xl:col-span-3">
-          <Swiper
-            ref={sliderRef}
-            spaceBetween={30}
-            grabCursor={true}
-            onSlideChange={onSlideChange}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              712: {
-                slidesPerView: 2,
-              },
-              950: {
-                slidesPerView: 2.5,
-              },
-              1280: {
-                slidesPerView: 2.2,
-              },
-            }}
-          >
-            {items.map((item, idx) => (
-              <SwiperSlide key={idx} className="!h-auto">
-                <div className="flex flex-col justify-between bg-white rounded-[10px] cursor-pointer h-full py-[20px]">
-                  <div>
-                    <div className="flex items-center justify-between px-[27px]">
-                      <BiSolidQuoteAltRight className="text-primary text-[40px]" />
-                      <div className="flex justify-start">
-                        {Array.from(Array(5), (i, x) => {
-                          return (
-                            <BiSolidStar
-                              key={x}
-                              className={`text-[20px] ${
-                                x < item.ratting ? "text-star" : "text-gray-600"
-                              }`}
-                            />
-                          );
-                        })}
+          <RevealOnScroll animate="animate__fadeInRight">
+            <Swiper
+              ref={sliderRef}
+              spaceBetween={30}
+              grabCursor={true}
+              onSlideChange={onSlideChange}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                712: {
+                  slidesPerView: 2,
+                },
+                950: {
+                  slidesPerView: 2.5,
+                },
+                1280: {
+                  slidesPerView: 2.2,
+                },
+              }}
+            >
+              {items.map((item, idx) => (
+                <SwiperSlide key={idx} className="!h-auto">
+                  <div className="flex flex-col justify-between bg-white rounded-[10px] cursor-pointer h-full py-[20px]">
+                    <div>
+                      <div className="flex items-center justify-between px-[27px]">
+                        <BiSolidQuoteAltRight className="text-primary text-[40px]" />
+                        <div className="flex justify-start">
+                          {Array.from(Array(5), (i, x) => {
+                            return (
+                              <BiSolidStar
+                                key={x}
+                                className={`text-[20px] ${
+                                  x < item.ratting
+                                    ? "text-star"
+                                    : "text-gray-600"
+                                }`}
+                              />
+                            );
+                          })}
+                        </div>
+                      </div>
+                      <div className="text-lg font-normal font-synonym pt-3 px-[27px] whitespace-pre-line">
+                        {item.comment}
                       </div>
                     </div>
-                    <div className="text-lg font-normal font-synonym pt-3 px-[27px] whitespace-pre-line">
-                      {item.comment}
-                    </div>
-                  </div>
 
-                  <div className="w-full bottom-5 flex justify-between items-center px-10 pt-5">
-                    <div className="flex items-center">
-                      <img
-                        src={item.avatar}
-                        alt=""
-                        className="w-[40px] h-[40px]"
-                      />
-                      <div className="ml-3">
-                        <div className="text-black text-lg font-semibold font-synonym">
-                          {item.name}
-                        </div>
-                        <div className="text-black text-[15px] font-normal font-synonym leading-snug">
-                          {item.job}
+                    <div className="w-full bottom-5 flex justify-between items-center px-10 pt-5">
+                      <div className="flex items-center">
+                        <img
+                          src={item.avatar}
+                          alt=""
+                          className="w-[40px] h-[40px]"
+                        />
+                        <div className="ml-3">
+                          <div className="text-black text-lg font-semibold font-synonym">
+                            {item.name}
+                          </div>
+                          <div className="text-black text-[15px] font-normal font-synonym leading-snug">
+                            {item.job}
+                          </div>
                         </div>
                       </div>
+                      <MdVerified />
                     </div>
-                    <MdVerified />
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="flex justify-center xl:justify-start mt-12 xl:hidden">
-            <div
-              onClick={handlePrev}
-              className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
-                isBegining ? "bg-[#E7DFFA]" : "bg-primary"
-              }`}
-            >
-              <BsArrowLeftShort
-                className={`text-[38px]  ${
-                  isBegining ? "text-primary" : "text-white"
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="flex justify-center xl:justify-start mt-12 xl:hidden">
+              <div
+                onClick={handlePrev}
+                className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
+                  isBegining ? "bg-[#E7DFFA]" : "bg-primary"
                 }`}
-              />
-            </div>
-            <div
-              onClick={handleNext}
-              className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
-                isEnd ? "bg-[#E7DFFA]" : "bg-primary"
-              }`}
-            >
-              <BsArrowRightShort
-                className={`text-[38px]  ${
-                  isEnd ? "text-primary" : "text-white"
+              >
+                <BsArrowLeftShort
+                  className={`text-[38px]  ${
+                    isBegining ? "text-primary" : "text-white"
+                  }`}
+                />
+              </div>
+              <div
+                onClick={handleNext}
+                className={`flex items-center justify-center  w-[50px] h-[50px] rounded-full cursor-pointer mr-5  ${
+                  isEnd ? "bg-[#E7DFFA]" : "bg-primary"
                 }`}
-              />
+              >
+                <BsArrowRightShort
+                  className={`text-[38px]  ${
+                    isEnd ? "text-primary" : "text-white"
+                  }`}
+                />
+              </div>
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </div>
     </div>
