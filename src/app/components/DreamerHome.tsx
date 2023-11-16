@@ -53,7 +53,7 @@ function DreamerHome() {
             </h1>
           </div>
         </RevealOnScroll>
-        <RevealOnScroll animate="animate__flipInX">
+        <RevealOnScroll animate="animate__fadeInRight">
           <div className="px-10 xl:px-0 text-left">
             <Swiper
               spaceBetween={30}
